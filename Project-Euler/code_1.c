@@ -1,10 +1,10 @@
 /*
  ============================================================================
- Name        : ProjectEular_1.c
+ Name        : Project Euler_1.c
  Author      : Deepanshu Thakur
  Version     : 1.0
  Copyright   : None
- Description : Project Eular 1
+ Description : Project Euler 1
  ============================================================================
  */
 
