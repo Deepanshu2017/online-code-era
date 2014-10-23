@@ -1,0 +1,21 @@
+#include<stdio.h>
+
+int main(void){
+	unsigned int a,c,d,e;
+	scanf("%lu",&a);
+	
+	do{
+		scanf("%lu",&c);
+		d=0;
+		
+		do{
+		  d+=c/5;
+		  c=c/5;
+		}while(c>0);
+		
+		printf("%lu\n",d);
+		a--;
+	}while(a>0);
+	
+	return 0;
+}
