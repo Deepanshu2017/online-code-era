@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main(void){
+	int N,dish[1000],i,j,result,temp,count1=1,count2=1;
+	scanf("%d",&N);
+	for(i=0;i<N;i++)
+		scanf("%d",&dish[i]);
+	for(i=0;i<N-1;i++)
+	{
+		count1=1;
+		temp=dish[i];
+		for(j=i+1;j<N;j++)
+		{
+			if(temp==dish[j])
+				count1+=1;
+		}
+		if(count1>count2)
+		{
+			count2=count1;
+			result=temp;
+		}
+		else if(count1==count2)
+		{
+			result=-1;
+		}
+	}
+	printf("%d",result);
+	return 0;
+}
