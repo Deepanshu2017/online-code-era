@@ -1,0 +1,36 @@
+THE PROBLEM STATEMENT
+Bob is fond of the number 3. He was given n numbers and he decides to count all the multiples of 3 from the n numbers. 
+You have to write a program to help Bob. 
+
+INPUT
+1. The first line of input contains the integer n.
+2. Then n lines follow, each containing a positive integer a[i], 1<=i<=n.
+
+
+OUTPUT
+The output contains a single integer, the required count. 
+
+CONSTRAINTS
+1<=n<=10000 1<=a[i]<=109 
+
+This is a golf code problem, so the correct source code with the least number of characters will be given,
+more points. I have a solution of 34 characters that is the reference point. It is assigned a score of 100. 
+Suppose, you submit a solution of n characters, then your score is (34/n)*100. 
+
+There is a very good chance that you might beat this solution and score more the 100 points for the question. 
+
+Input
+10
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+10
+
+output
+3
