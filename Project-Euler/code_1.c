@@ -4,7 +4,7 @@
  Author      : Deepanshu Thakur
  Version     : 1.0
  Copyright   : None
- Description : Project Euler 1
+ Description : Project Euler Problem 1
  ============================================================================
  */
 
