@@ -1,0 +1,32 @@
+#include <stdio.h>
+int main(void){
+	int i,j;
+	scanf("%d",&i);
+	for(j=0;j<i;j++){
+		int a=0,b=0,c=0,d=0,e=0,f=0;
+		scanf("%d%d",&a,&b);
+		while(a>0){
+			c=a%10;
+			d=d*10+c;
+			a=a/10;
+		}
+		c=0;
+		while(b>0){
+			c=b%10;
+			e=e*10+c;
+			b=b/10;
+		}
+		f=e+d;
+		c=0;
+		e=0;
+		d=0;
+		while(f>0){
+			c=f%10;
+			e=e*10+c;
+			f=f/10;
+		}
+		printf("%d",e);
+		printf("\n");
+	}
+	return 0;
+}
