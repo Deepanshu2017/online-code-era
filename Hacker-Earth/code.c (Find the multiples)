@@ -27,3 +27,17 @@ printf("%lld",i);
 return 0;}
 
 //Score 22.52
+
+
+#include<stdio.h>
+main(){
+long long int n,a,i=0;
+scanf("%lld",&n);
+while(n--){
+scanf("%lld",&a);
+if(a%3==0)
+i++;}
+printf("%lld",i);
+return 0;}
+
+// Beat my best : 23.95
