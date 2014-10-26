@@ -54,3 +54,20 @@ printf("%ld",i);
 return 0;}
 
 // Deal with it : 25.37 
+
+
+//Challenge accepted
+
+
+#include<stdio.h>
+main(){
+int n,a,i=0;
+scanf("%d",&n);
+while(n--){
+scanf("%d",&a);
+if(a%3==0)
+i++;}
+printf("%d",i);
+return 0;}
+
+//Beat this up !! : 27.98
