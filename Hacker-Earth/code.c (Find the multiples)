@@ -71,3 +71,14 @@ printf("%d",i);
 return 0;}
 
 //Beat this up !! : 27.98
+
+/*
+Certain compilers, such as GCC, allow you to omit basic #includes, parameters, and return types for main.
+The following is a valid C89 and C99 program that compiles (with warnings) with GCC:
+Caution: Follwing program will not run in certain online compilers like ideone because they treat Warning as Error
+*/
+
+main(){long int n,a,i=0;scanf("%ld",&n);while(n--){scanf("%ld",&a);a%3?i:i++;}printf("%d",i);}
+
+
+// Eat, Sleep, Code, Repeat!! : 36.17
