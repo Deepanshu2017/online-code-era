@@ -11,7 +11,7 @@ OUTPUT
 The output contains a single integer, the required count. 
 
 CONSTRAINTS
-1<=n<=10000 1<=a[i]<=109 
+1<=n<=10000 1<=a[i]<=10^9 
 
 This is a golf code problem, so the correct source code with the least number of characters will be given,
 more points. I have a solution of 34 characters that is the reference point. It is assigned a score of 100. 
