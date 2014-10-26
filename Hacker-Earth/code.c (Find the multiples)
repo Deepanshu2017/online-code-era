@@ -41,3 +41,16 @@ printf("%lld",i);
 return 0;}
 
 // Beat my best : 23.95
+
+#include<stdio.h>
+main(){
+long int n,a,i=0;
+scanf("%ld",&n);
+while(n--){
+scanf("%ld",&a);
+if(a%3==0)
+i++;}
+printf("%ld",i);
+return 0;}
+
+// Deal with it : 25.37 
