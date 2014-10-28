@@ -2,13 +2,11 @@
 int main(void){
   
   int a[100],i=0;
-  while(i<100)
-  {
+  while(i<100){
     scanf("%d",&a[i]);
     i++;
   }
   i=0;
-    
   while(i<100){
     if(a[i]==42)
       break;
