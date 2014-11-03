@@ -1,0 +1,8 @@
+
+In many online competations we have to generate very large number of prime numbers within as less time as possible so
+Sieve if Eratosthenes and Sieve of Atkin are two very nice algoratimes to calculate large prime numbers in less time and
+this directory contains the implementation of Sieve of Eratosthenes and Sieve of Atkin!
+
+Sometimes we have to multiply very large number or we have to find out factorial of large numbers and handling these
+large numbers in languages like Java or Python is very easy but when it comes to language like C or C++ no data-type can
+hope very large numebrs so we have to use array!
