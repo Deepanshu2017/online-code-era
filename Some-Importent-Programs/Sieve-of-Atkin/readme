@@ -1,0 +1,4 @@
+
+This Logic is litte bit faster when comes to find the prime numbers of lagre range but it is not as much 
+effective as Sieve of eratosthenes when it comes to find prime number of small range! ALso this mathematical
+is not valid numbers under or equal to 5 so we have to explicitley wrrite these 3 prime numbers "2" "3" and "5"
