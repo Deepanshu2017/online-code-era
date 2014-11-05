@@ -1,0 +1,18 @@
+//Codeforces Round #276 (Div. 2)
+
+#include <stdio.h>
+
+int main(void) {
+    unsigned long int a=0,m=0,i=0;
+    scanf("%lu %lu",&a,&m);
+    for(i=0;i<=m;i++){
+        if(a%m==0)
+            break;
+        a=a+(a%m);
+    }
+    if(a%m==0)
+        printf("Yes");
+    else
+        printf("No");
+    return 0;
+}
