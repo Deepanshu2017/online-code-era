@@ -1,0 +1,21 @@
+/*
+ ============================================================================
+ Name        : 2.c
+ Author      : Deepanshu Thakur
+ Version     : 1.0
+ Copyright   : None
+ Description : Code beat
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	unsigned long int t=0,res=0;
+	scanf("%lu",&t);
+	while(t)
+		res=res+(t%10),t/=10;
+	printf("%lu",res);
+	return 0;
+}
