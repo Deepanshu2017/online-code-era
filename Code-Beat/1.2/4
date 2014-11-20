@@ -1,0 +1,80 @@
+/*
+ ============================================================================
+ Name        : 4.c
+ Author      : Deepanshu Thakur
+ Version     : 1.0
+ Copyright   : None
+ Description : Code beat
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	char str[100],str2[100],p,*str3;
+	unsigned int i=0,j=0,k=0,sum=0,count1=0,count2=0;
+	p=getchar_unlocked();
+	while(p>32){
+		str[i]=p;
+		i+=1;
+		p=getchar_unlocked();
+	}
+	p=getchar_unlocked();
+	while(p>32){
+		str2[j]=p;
+		j+=1;
+		p=getchar_unlocked();
+	}
+	for(count1=0;count1<i-1;count1++){
+		for(count2=count1+1;count2<i;count2++){
+			if(str[count1]>str[count2]){
+				char u=str[count1];
+				str[count1]=str[count2];
+				str[count2]=u;
+			}
+		}
+	}
+	for(count1=0;count1<j-1;count1++){
+		for(count2=count1+1;count2<j;count2++){
+			if(str2[count1]>str2[count2]){
+				char u=str2[count1];
+				str2[count1]=str2[count2];
+				str2[count2]=u;
+			}
+		}
+	}
+	sum=i+j;
+	str3=(char *)malloc(sizeof(char)*(sum));
+	count1=i;
+	count2=j;
+	i=0;j=0;
+
+	for(k=0;k<sum;k++){
+		if(i==count1){
+			while(k<sum){
+				str3[k]=str2[j];
+				j+=1;
+				k+=1;
+			}
+		}
+		else if(j==count2){
+			while(k<sum){
+				str3[k]=str[i];
+				i+=1;
+				k+=1;
+			}
+		}
+		else if(str[i]>=str2[j]){
+			str3[k]=str2[j];
+			j+=1;
+		}
+		else if(str[i]<str2[j]){
+			str3[k]=str[i];
+			i+=1;
+		}
+	}
+	for(i=0;i<k-1;i++)
+		printf("%c",str3[i]);
+	return 0;
+}
