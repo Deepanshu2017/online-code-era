@@ -1,0 +1,37 @@
+/*
+ ============================================================================
+ Name        : Dwitiya.c
+ Author      : Deepanshu Thakur
+ Version     : 1.0
+ Copyright   : None
+ Description : Prathamah Abhikalam
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+
+	unsigned int t=0;
+	scanf("%u",&t);
+	while(t--){
+
+		unsigned long int n=0,s=0;
+		scanf("%lu",&n);
+		if(n==0)
+			printf("%lu\n",n+9);
+		else{
+			while(n){
+				s=s+n%10;
+				n/=10;
+				if(n==0 && s>9){
+					n=s;
+					s=0;
+				}
+			}
+			printf("%lu\n",s);
+		}
+	}
+	return 0;
+}
