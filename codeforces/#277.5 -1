@@ -1,0 +1,50 @@
+/*
+ ============================================================================
+ Name        : Codeforces 1.c
+ Author      : Deepanshu Thakur
+ Version     : 1.0
+ Copyright   : None
+ Description : CodeForces Div 277.5
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+    long int t=0,u[3002]={0},temp=0,i=0,flag=0,arr1[3002]={0},arr2[3002]={0};
+    long int j=0,k=0,min=0,max=0,minpos=0,maxpos=0,count=0;
+    scanf("%ld",&t);
+    while(t--){
+        scanf("%ld",&u[i]);
+        i+=1;
+    }
+    k=i;
+    for(i=0;i<k-1;i++){
+        max=-999999999;
+        min=999999999;
+        for(j=i;j<k;j++){
+            if(min>u[j]){
+                min=u[j];
+                minpos=j;
+            }
+        }
+        if(u[minpos]!=u[i]){
+            temp=u[minpos];
+            u[minpos]=u[i];
+            u[i]=temp;
+            flag=1;
+            arr1[count]=i;
+            arr2[count]=minpos;
+            count+=1;
+        }
+    }
+    if(flag==0)
+        printf("%ld\n",0);
+    else{
+        printf("%ld\n",count);
+        for(i=0;i<count;i++)
+            printf("%ld %ld\n",arr1[i],arr2[i]);
+    }
+    return 0;
+}
