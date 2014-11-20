@@ -1,0 +1,43 @@
+/*
+ ============================================================================
+ Name        : Tritiya.c
+ Author      : Deepanshu Thakur
+ Version     : 1.0
+ Copyright   : None
+ Description : Prathamah Abhikalam
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+
+	unsigned int t=0;
+	scanf("%u",&t);
+	char q=getchar_unlocked();
+	while(t--){
+		unsigned long long int arr=0,res=0;
+		char p;
+		p=getchar_unlocked();
+		while(p>32){
+			res=res+(p-'0');
+			p=getchar_unlocked();
+		}
+		if(res==0){
+			printf("%llu\n",arr+9);
+		}
+		else{
+			while(res){
+				arr=arr+(res%10);
+				res/=10;
+				if(res==0 && arr>9){
+					res=arr;
+					arr=0;
+				}
+			}
+			printf("%llu\n",arr);
+		}
+	}
+	return 0;
+}
