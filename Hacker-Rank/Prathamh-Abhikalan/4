@@ -1,0 +1,47 @@
+/*
+ ============================================================================
+ Name        : Chaturtah.c
+ Author      : Deepanshu Thakur
+ Version     : 1.0
+ Copyright   : None
+ Description : Prathamah Abhikalam
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+
+	unsigned int t=0;
+	scanf("%u",&t);
+	while(t--){
+		unsigned long int n=0,d=0,i=0,j=0,k=0,res=0;
+		scanf("%lu %lu",&n,&d);
+		j=n;
+		if(n<=d){
+			if(n==d)
+				res=res-n;
+			while(n){
+				res=res+n;
+				n-=1;
+			}
+			printf("%lu\n",res);
+		}
+		else{
+			i=j/d;
+			k=1;
+			while(k<d){
+				res=res+k;
+				k+=1;
+			}
+			res=res*i;
+			while(n%d!=0){
+				res=res+(n%d);
+				n-=1;
+			}
+			printf("%lu\n",res);
+		}
+	}
+	return 0;
+}
