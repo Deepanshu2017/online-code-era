@@ -1,0 +1,28 @@
+/*
+============================================================================
+Name : 3
+Author : Deepanshu Thakur
+Version : 1.0
+Copyright : None
+Description : Code Chef
+============================================================================
+*/
+ 
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main(void){
+    unsigned int t=0;
+    scanf("%d",&t);
+    while(t--){
+        long long int u=0,v=0,total=0,n=0,d=0,i=0,a=0;
+        scanf("%lld %lld %lld",&u,&v,&total);
+        n=(total*2)/(u+v);  
+        d=(v-u)/(n-5);
+        a=u-(2*d);
+        printf("%lld\n",n);
+        for(i=0;i<n;i++)
+        printf("%lld ",(a+(i*d)));
+    }
+    return 0;
+}
