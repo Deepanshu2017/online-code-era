@@ -1,0 +1,39 @@
+/*
+ ============================================================================
+ Name        : Shashtam.c
+ Author      : Deepanshu Thakur
+ Version     : 1.0
+ Copyright   : None
+ Description : Prathamah Abhikalam
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	unsigned int t=0;
+	scanf("%u",&t);
+	while(t--){
+		unsigned long int n=0,i=0,j=0,flag=0;
+		scanf("%lu",&n);
+        j=n;
+		if(n==2)
+			printf("YES\n");
+        else if(n==1)
+            printf("NO\n");
+		else{
+			for(i=2;i<sqrt(j)+1;i++){
+				if(n%i==0){
+					flag=1;
+					break;
+				}
+			}
+			if(flag==1)
+				printf("NO\n");
+			else
+				printf("YES\n");
+		}
+	}
+	return 0;
+}
