@@ -1,0 +1,85 @@
+/*
+ ============================================================================
+ Name        : Saptam.c
+ Author      : Deepanshu Thakur
+ Version     : 1.0
+ Copyright   : None
+ Description : Prathamah Abhikalam
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 66000
+
+int main(void){
+
+	unsigned int t=0;
+	scanf("%u",&t);
+	unsigned long int prime1[SIZE]={0},u=0,v=0,w=0,prime[SIZE]={0};
+
+	for(u=0;u<66000;u++)
+	    prime1[u]=u;
+	for(u=2;u<66000;u++)
+		if(prime1[u]!=0)
+	    	for(v=2;v<66000;v++){
+	    			prime1[v*prime1[u]]=0;
+	    			if(prime1[u]*v>66000)
+	    				break;
+	    		}
+	for(u=0;u<66000;u++)
+	    if(prime1[u]!=0){
+	    	prime[w]=prime1[u];
+	    	w+=1;
+	    }
+
+	while(t--){
+		unsigned long int n=0,i=1,j=0,k=0,arr[1000]={0},flag=0,count=0,flag2=0;
+		scanf("%lu",&n);
+		
+        if(n==1 || n==0)
+            printf("NO\n");
+        else{
+            while(n!=i){
+			     while(n%i==0){
+			 	    arr[k]=i;
+				    k+=1;
+				    i+=1;
+				    flag=1;
+				    flag2+=1;
+			     }
+			     if(flag!=1)
+				    i+=1;
+			        flag=0;
+		     }
+		
+            if(flag2==1)
+			     printf("NO\n");
+		
+            else{
+		      flag=0;
+		      count=k;
+		      i=0;j=0;
+		      while(arr[j]>=prime[i] && arr[j]!=0){
+	      	    if(arr[j]==prime[i]){
+		    	     arr[j]=0;
+    		         j+=1;
+			     }
+			     i+=1;
+		      }
+		
+            for(i=0;i<count;i++)
+			     if(arr[i]!=0){
+			     	flag=1;
+				    break;
+			}
+          
+              if(flag==0)
+			     printf("YES\n");
+		      else
+			     printf("NO\n");
+		    }
+        }
+	}
+	return 0;
+}
