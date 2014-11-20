@@ -1,0 +1,27 @@
+/*
+ ============================================================================
+ Name        : Prathamah.c
+ Author      : Deepanshu Thakur
+ Version     : 1.0
+ Copyright   : None
+ Description : Prathamah Abhikalam
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	unsigned int t=0;
+	scanf("%u",&t);
+	while(t--){
+		long int n=0,s=0;
+		scanf("%ld",&n);
+		while(n){
+			s=s+n%10;
+			n/=10;
+		}
+		printf("%ld\n",s);
+	}
+	return 0;
+}
