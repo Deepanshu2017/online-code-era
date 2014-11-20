@@ -1,0 +1,30 @@
+/*
+ ============================================================================
+ Name        : Pancham.c
+ Author      : Deepanshu Thakur
+ Version     : 1.0
+ Copyright   : None
+ Description : Prathamah Abhikalam
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+
+	unsigned int t=0;
+	scanf("%u",&t);
+	while(t--){
+
+		unsigned long int n=0,sum=0;
+		scanf("%lu",&n);
+		while(n){
+			if(n%2!=0)
+				sum+=1;
+			n/=2;
+		}
+		printf("%lu\n",sum);
+	}
+	return 0;
+}
