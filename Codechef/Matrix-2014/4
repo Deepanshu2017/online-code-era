@@ -1,0 +1,43 @@
+    /*
+    ============================================================================
+    Name : 4
+    Author : Deepanshu Thakur
+    Version : 1.0
+    Copyright : None
+    Description : Code Chef
+    ============================================================================
+    */
+     
+    #include <stdio.h>
+    #include <stdlib.h>
+     
+    int main(void){
+        unsigned long long int n=0;
+        scanf("%llu",&n);
+        while(n){
+            unsigned long long int arr[5000]={0},i=0,j=0,k=0,count=0,l=0;
+            while(n--){
+                scanf("%llu",&arr[l]);
+                l+=1;
+            }
+            for(i=0;i<l-1;i++)
+            for(j=i;j<l;j++)
+            if( arr[i]>arr[j]){
+                unsigned long long int t=arr[i];
+                arr[i]=arr[j];
+                arr[j]=t;
+            }
+            for(i=0;i<l-2;i++){
+                for(j=i+1;j<l-1;j++){
+                    for(k=j+1;k<l;k++){
+                        if(arr[i]+arr[j]<arr[k])
+                            count+=1;
+                    }
+                }
+            }
+            printf("%llu\n",count);
+            scanf("%llu",&n);
+        }
+         
+        return 0;
+    } 
