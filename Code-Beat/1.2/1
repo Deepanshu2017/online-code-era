@@ -1,0 +1,32 @@
+/*
+ ============================================================================
+ Name        : 1.c
+ Author      : Deepanshu Thakur
+ Version     : 1.0
+ Copyright   : None
+ Description : Code Beat
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+
+	char str1[100],str2[100],p='a';
+	unsigned int k=0,i=0,j=0;
+	p=getchar_unlocked();
+	while(p>32){
+		str1[i]=p;
+		i+=1;
+		p=getchar_unlocked();
+	}
+	k=i;
+	for(j=0;j<k;j++){
+		str2[j]=str1[i-1];
+		i-=1;
+	}
+	for(j=0;j<k;j++)
+		printf("%c",str2[j]);
+	return 0;
+}
