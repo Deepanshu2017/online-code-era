@@ -1,0 +1,43 @@
+/*
+============================================================================
+Name : 1
+Author : Deepanshu Thakur
+Version : 1.0
+Copyright : None
+Description : Code Chef
+============================================================================
+*/
+ 
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main(void) {
+    unsigned int t=0;
+    unsigned long int arr[100000],i=1,j=0,res=1,k=0;
+    scanf("%u",&t);
+    while(res<1000000000){
+        res=res+j;
+        arr[k]=res;
+        k+=1;
+        j=i;
+        i=res;
+    }
+    i=0;
+    j=0;
+    while(t--){
+        unsigned long int n=0,flag=0;
+        i=0;
+        scanf("%lu",&n);
+        while(arr[i]<=n){
+            if(arr[i]==n){
+            printf("is fibo\n");
+            flag=1;
+            break;
+            }
+        i+=1;
+        }
+        if(flag==0)
+        printf("not fibo\n");
+    }
+    return 0;
+}
