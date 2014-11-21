@@ -1,0 +1,31 @@
+/*
+ ============================================================================
+ Name        : 7.c
+ Author      : Deepanshu Thakur
+ Version     : 1.0
+ Copyright   : None
+ Description : code beat
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main(void) {
+	int mat[100][100],i=0,j=0,k=0,suma=0,sumb=0,n=0;
+	printf("Enter number of raws\n");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+		for(j=0;j<n;j++)
+			scanf("%d",&mat[i][j]);
+	for(i=0;i<n;i++)
+		for(j=0;j<n;j++){
+			if(j>i)
+				suma=suma+mat[i][j];
+			else if(j<i)
+				sumb=sumb+mat[i][j];
+		}
+	printf("%d %d",suma,sumb);
+	return 0;
+}
