@@ -1,0 +1,28 @@
+/*
+ ============================================================================
+ Name        : 5.c
+ Author      : Deepanshu Thakur
+ Version     : 1.0
+ Copyright   : None
+ Description : code beat
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	long int t=0,res[1000],i=0;
+	scanf("%ld",&t);
+	while(t){
+		if(t%2==0)
+			res[i]=0;
+		else
+			res[i]=1;
+		t/=2;
+		i+=1;
+	}
+	for(t=i-1;t>=0;t--)
+		printf("%ld",res[t]);
+	return 0;
+}
