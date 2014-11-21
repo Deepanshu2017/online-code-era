@@ -1,0 +1,60 @@
+/*
+ ============================================================================
+ Name        : 9.c
+ Author      : Deepanshu Thakur
+ Version     : 1.0
+ Copyright   : None
+ Description : code beta
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node{
+	int info;
+	struct node* link;
+};
+
+int main(void) {
+	struct node *root,*n,*temp,*temp2,*k,*temp3;
+	char ch='y',tempc;
+	int count=0;
+	root=0;
+	do{
+		n=(struct node *)malloc(sizeof(struct node));
+		printf("Enter infomation ");
+		scanf("%d",&n->info);
+		n->link=0;
+		if(root==0){
+			root=n;
+			temp=n;
+		}
+		else{
+			temp->link=n;
+			temp=n;
+		}
+		count+=1;
+		printf("Do you want to perform more action ");
+		tempc=getchar_unlocked();
+		if(tempc==32 || tempc==10)
+			tempc=getchar_unlocked();
+		ch=tempc;
+	}while(ch=='y' || ch=='Y');
+	while(count-1){
+		k=root;
+		temp2=k->link;
+		while(temp2->link!=0){
+			k=k->link;
+			temp2=temp2->link;
+		}
+		temp2->link=k;
+		k->link=0;
+		count-=1;
+	}
+	while(temp!=0){
+		printf("\nInfo if %d",temp->info);
+		temp=temp->link;
+	}
+	return 0;
+}
