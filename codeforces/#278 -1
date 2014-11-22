@@ -1,0 +1,60 @@
+/*
+ ============================================================================
+ Name        : 1.c
+ Author      : Deepanshu Thakur
+ Version     : 1.0
+ Copyright   : None
+ Description : Codeforces Contest #278
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	long long int a=0,b=0,c=0,j=0,flag=0,count=0;
+	scanf("%lld",&a);
+	if(a<0 && a>=-8){
+		count=(-1 * a)+8;
+	}
+	else if(a<-8){
+		b=-a-1;
+		count+=1;
+		while(1){
+			c=b;
+			while(c){
+				j=c%10;
+				if(j==8){
+					flag=1;
+					break;
+				}
+				c/=10;
+			}
+			if(flag==1)
+				break;
+			b-=1;
+			count+=1;
+		}
+	}
+	else{
+		b=a+1;
+		count+=1;
+		while(1){
+			c=b;
+			while(c){
+				j=c%10;
+				if(j==8){
+					flag=1;
+					break;
+				}
+				c/=10;
+			}
+			if(flag==1)
+				break;
+			b+=1;
+			count+=1;
+		}
+	}
+	printf("%lld",count);
+	return 0;
+}
