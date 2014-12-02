@@ -1,0 +1,47 @@
+/*
+ ============================================================================
+ Name        : Codeforces.c
+ Author      : Deepanshu Thakur
+ Version     : 1.0
+ Copyright   : None
+ Description : Second question of Div #2 280
+ ============================================================================
+ */
+
+#include <stdio.h>
+int main(void){
+
+    unsigned long long int i=0,j=0,n=0,l=0,arr[10005]={0};
+    double diff=0,diff2=0,diff3=0;
+    double res=0;
+    scanf("%llu %llu",&n,&l);
+    for(i=0;i<n;i++)
+        scanf("%llu",&arr[i]);
+
+    for(i=0;i<n-1;i++){
+        for(j=i+1;j<n;j++){
+            if(arr[i]>arr[j]){
+                unsigned long long int t=arr[i];
+                arr[i]=arr[j];
+                arr[j]=t;
+            }
+        }
+    }
+    unsigned long long int a=arr[0]-0;
+    diff3=a;
+    diff2=l-arr[n-1];
+    for(i=0;i<n-1;i+=1)
+        if(diff<(arr[i+1]-arr[i]))
+            diff=(arr[i+1]-arr[i]);
+
+    res=diff/2;
+
+    if(diff2>diff3)
+        diff3=diff2;
+
+    if(res>diff3)
+        printf("%.10lf\n",res);
+    else
+        printf("%.10lf\n",diff3);
+    return 0;
+}
