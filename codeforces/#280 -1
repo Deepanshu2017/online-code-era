@@ -1,0 +1,38 @@
+/*
+ ============================================================================
+ Name        : Codeforces.c
+ Author      : Deepanshu Thakur
+ Version     : 1.0
+ Copyright   : None
+ Description : First question of Div #2 280
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+    unsigned long long int n=0,i=1,res=1,final[100000]={0};
+    int flag=0;
+    scanf("%llu",&n);
+    while(res<10005){
+        final[i-1]=res;
+        i+=1;
+        res=res+i;
+    }
+    res=0;i=0;
+    while(res<n){
+        res=res+final[i++];
+        if(res==n){
+            flag=1;
+            break;
+        }
+    }
+    if(!flag)
+        i-=1;
+    if(i==0)
+        printf("%llu\n",i+1);
+    else
+        printf("%llu\n",i);
+    return 0;
+}
