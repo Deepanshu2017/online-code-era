@@ -39,6 +39,9 @@ public:
 			return(res="Easy");
 	}
 };
+
+//Top Coder contest doesn't contain any main method so I have wrote this for testing only
+
 int main(void){
 	ElectronicPetEasy e1;
 	cout<<e1.isDifficult(1,1000,1000,2,1000,1000)<<endl;;
