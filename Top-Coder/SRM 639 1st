@@ -26,13 +26,15 @@ public:
 			arr2[st2]=st2;
 			st2+=p2;
 		}
+		
 		i=st1>st2?st1:st2;
-		for(j=0;j<i;j++){
+		
+		for(j=0;j<i;j++)
 			if(arr1[j]==arr2[j] && arr1[j]!=0){
 				flag=1;
 				break;
 			}
-		}
+
 		if(flag)
 			return(res="Difficult");
 		else
