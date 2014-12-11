@@ -1,0 +1,46 @@
+//============================================================================
+// Name        : Topcoder.cpp
+// Author      : Deepanshu Thakur
+// Version     : 1.0
+// Copyright   : None
+// Description : 1st question of SRM 639 in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <string.h>
+using namespace std;
+#define SIZE 10000000
+int arr1[SIZE]={0},arr2[SIZE]={0};
+class ElectronicPetEasy{
+private:
+
+public:
+	string isDifficult(int st1, int p1, int t1, int st2, int p2, int t2){
+		string res;
+		int i=0,j=0,flag=0;
+		while(t1--){
+			arr1[st1]=st1;
+			st1+=p1;
+		}
+		while(t2--){
+			arr2[st2]=st2;
+			st2+=p2;
+		}
+		i=st1>st2?st1:st2;
+		for(j=0;j<i;j++){
+			if(arr1[j]==arr2[j] && arr1[j]!=0){
+				flag=1;
+				break;
+			}
+		}
+		if(flag)
+			return(res="Difficult");
+		else
+			return(res="Easy");
+	}
+};
+int main(void){
+	ElectronicPetEasy e1;
+	cout<<e1.isDifficult(1,1000,1000,2,1000,1000)<<endl;;
+	return 0;
+}
