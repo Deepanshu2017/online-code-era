@@ -1,0 +1,45 @@
+/*
+ ============================================================================
+ Name        : First.c
+ Author      : Deepanshu Thakur
+ Version     : 1.0
+ Copyright   : none
+ Description : First question in CodeForces Testing Round 11 C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 1000000
+#define TEST 100
+int main(void) {
+    long int A=0,B=0,N=0,arr2[SIZE]={0};
+    scanf("%ld",&A);
+    scanf("%ld",&B);
+    N=A+B+1;
+    long int i=0,j=0,k=0;
+    if(A>0){
+        arr2[k]=N-A;
+        k+=1;
+        for(i=1;i<A;i++){
+            arr2[k]=arr2[k-1]+1;
+            k+=1;
+        }
+        arr2[k++]=N;
+        if(B!=0){
+            arr2[k++]=N-A-1;
+            for(i=1;i<B;i++){
+                arr2[k]=arr2[k-1]-1;
+                k+=1;
+            }
+        }    
+    }
+    else{
+        for(i=0;i<B+1;i++)
+            arr2[i]=N--;
+        k=i;
+    }
+    for(i=0;i<k;i++)
+        printf("%ld ",arr2[i]);
+    return 0;
+}
