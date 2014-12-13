@@ -1,0 +1,37 @@
+//============================================================================
+// Name        : SRM_343_DIV2.cpp
+// Author      : Deepanshu Thakur
+// Version     : 1.0
+// Copyright   : None
+// Description : First Top coder program
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+class PersistentNumber{
+public:
+	int getPersistence(int);
+};
+int PersistentNumber::getPersistence(int a){
+	unsigned long long int p=1,q=a;
+	int count=0;
+	while(q>0){
+	if(q<10)
+		return count;
+	p=1;
+	while(q>0){
+			p=p*(q%10);
+			q/=10;
+		}
+		count+=1;
+	q=p;
+	}
+	return count;
+}
+int main(void){
+	PersistentNumber p1;
+	int b=p1.getPersistence(99);
+	cout<<b;
+	return 0;
+}
