@@ -1,0 +1,77 @@
+//============================================================================
+// Name        : TCSRM344DIV2.cpp
+// Author      : Deepanshu Thakur
+// Version     :
+// Copyright   : None
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+class Chessboard{
+public:
+	string changeNotation (string);
+};
+
+string Chessboard::changeNotation(string cell){
+	int i=cell[0],j=cell[1];
+	if(i>58){
+		int temp=0;
+		temp=i-96;
+		temp+=8*(j-49);
+		cell[1]=(temp%10)+48;
+		temp/=10;
+		cell[0]=temp+48;
+		if(cell[0]==48){
+			char ch[1];
+			ch[0]=cell[1];
+			string cell1;
+			cell1=ch[0];
+			return cell1;
+		}
+		return cell;
+	}
+	else{
+		if(j!='\0'){
+			i-=48;
+			j-=48;
+			int temp=i*10+j;
+			i=temp%8;
+			if(i==0)
+				i=8;
+			temp=temp-i;
+			j=1+(temp/8);
+			j+=48;
+			i+=96;
+			cell[0]=i;
+			cell[1]=j;
+			return cell;
+		}
+		else{
+			int j=0;
+			char ch[2];
+			i-=48;
+			if(i==9){
+				cell="a2";
+				return cell;
+			}
+			j='1';
+			i+=96;
+			ch[0]=i;
+			ch[1]=j;
+			cell=ch[0];
+			cell=cell+ch[1];
+			return cell;
+		}
+	}
+}
+
+int main(void) {
+	Chessboard s1;
+	string s2 = "Hello";
+	s2=s1.changeNotation("c1");
+	cout<<s2;
+	return 0;
+}
