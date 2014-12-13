@@ -1,9 +1,9 @@
 //============================================================================
-// Name        : TCSRM344DIV2.cpp
+// Name        : SRM_344_DIV2.cpp
 // Author      : Deepanshu Thakur
-// Version     :
+// Version     : 1.0
 // Copyright   : None
-// Description : Hello World in C++, Ansi-style
+// Description : Top Coder second program
 //============================================================================
 
 #include <iostream>
@@ -67,6 +67,10 @@ string Chessboard::changeNotation(string cell){
 		}
 	}
 }
+
+
+//Top Coder contest doesn't contain any main method so I have wrote this for testing only
+
 
 int main(void) {
 	Chessboard s1;
