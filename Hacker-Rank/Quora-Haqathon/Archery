@@ -1,0 +1,86 @@
+//============================================================================
+// Name        : Quora.cpp
+// Author      : Deepanshu Thakur
+// Version     : 1.0
+// Copyright   : None
+// Description : Archery in C++, Ansi-style
+//============================================================================
+
+#include <stdio.h>
+#include <algorithm>
+#include <iostream>
+#include <vector>
+#include <stdlib.h>
+#include <math.h>
+using namespace std;
+
+int main(void){
+    vector<unsigned long int> v1;
+    vector<long long int> vx1,vy1,vx2,vy2;
+    unsigned long int N=0,i=0,j=0,M=0;
+	unsigned long int temp;
+	unsigned long long int count=0;
+	long int temp1=0,temp2=0,temp3=0,temp4=0;
+    scanf("%lu",&N);
+    for(i=0;i<N;i++){
+        scanf("%lu",&temp);
+        v1.push_back(temp);
+    }
+    sort(v1.begin(),v1.end());
+    scanf("%lu",&M);
+    for(i=0;i<M;i++){
+    	scanf("%ld %ld %ld %ld",&temp1,&temp2,&temp3,&temp4);
+    	vx1.push_back(temp1);
+    	vy1.push_back(temp2);
+    	vx2.push_back(temp3);
+    	vy2.push_back(temp4);
+    }
+    i=0;
+    while(M--){
+    	double a=0,b=0,c=0,d=0,flag=0;
+    	a=sqrt((vx1[i]*vx1[i])+(vy1[i]*vy1[i]));
+    	b=sqrt((vx2[i]*vx2[i])+(vy2[i]*vy2[i]));
+    	if(a>b)
+    		b=(a+b)-(a=b);
+    	unsigned long int min=0,max=N-1,mid=0;
+    	mid=(min+max)/2;
+    	while(min<=max){
+    		if(a==v1[mid]){
+    			c=mid;
+    			flag=1;
+    			break;
+    		}
+    		else if(a>v1[mid])
+    			min=mid+1;
+    		else{
+    			max=mid-1;
+    			flag=1;
+    			c=mid;
+    		}
+    		mid=(min+max)/2;
+    	}
+    	min=c;
+    	max=N-1;
+    	mid=(min+max)/2;
+    	while(min<=max && flag==1){
+    		if(b==v1[mid]){
+    			d=mid;
+    			break;
+    		}
+    		else if(b>v1[mid])
+    			min=mid+1;
+    		else{
+    			max=mid-1;
+    			d=mid;
+    		}
+    		mid=(min+max)/2;
+    	}
+    	if(d==0)
+    		d=N;
+    	if(flag)
+    		count+=(d-c);
+    	i+=1;
+    }
+    printf("%llu",count);
+    return 0;
+}
