@@ -1,0 +1,66 @@
+//============================================================================
+// Name        : SRM.cpp
+// Author      : Deepanshu Thakur
+// Version     : 1.0
+// Copyright   : None
+// Description : SRM 641 first question in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+class BuyingTshirts{
+
+public:
+
+	int meet(int T, vector<int> Q, vector<int> P){
+		int i=0,N=0,res=0,k=0,l=0;
+		vector<int> v1,v2;
+		int j=Q.size();
+		while(j--){
+			res+=Q[i];
+			if(res>=T){
+				res-=T;
+				v1.push_back(i);
+				k++;
+			}
+			i+=1;
+		}
+		i=0;res=0;j=P.size();
+		while(j--){
+			res+=P[i];
+			if(res>=T){
+				res-=T;
+				v2.push_back(i);
+				l++;
+			}
+			i+=1;
+		}
+		for(i=0;i<k;i++){
+			for(j=0;j<l;j++)
+				if(v1[i]==v2[j]){
+					N+=1;
+					break;
+				}
+		}
+		return N;
+	}
+};
+
+int main(void){
+	int v1[10]={11, 62, 55, 35, 62,-1};
+	int v2[10]={49, 17, 51, 53, -2};
+	int a=0;
+	vector<int> u1,u2;
+	int i=0,j=0;
+	while(v1[i]!=-1)
+		u1.push_back(v1[i++]);
+	while(v2[j]!=-2)
+		u2.push_back(v2[j++]);
+	BuyingTshirts b;
+	a=b.meet(68,u1 ,u2);
+	cout<<a;
+	return 0;
+}
