@@ -25,10 +25,13 @@ int PersistentNumber::getPersistence(int a){
 			q/=10;
 		}
 		count+=1;
-	q=p;
+		q=p;
 	}
 	return count;
 }
+
+//Top Coder contest doesn't contain any main method so I have wrote this for testing only
+
 int main(void){
 	PersistentNumber p1;
 	int b=p1.getPersistence(99);
