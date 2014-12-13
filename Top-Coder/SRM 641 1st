@@ -49,6 +49,10 @@ public:
 	}
 };
 
+
+//Top Coder contest doesn't contain any main method so I have wrote this for testing only
+
+
 int main(void){
 	int v1[10]={11, 62, 55, 35, 62,-1};
 	int v2[10]={49, 17, 51, 53, -2};
