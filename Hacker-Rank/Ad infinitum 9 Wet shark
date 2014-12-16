@@ -1,3 +1,12 @@
+
+//============================================================================
+// Name         : Ad_Infinitum 9
+// Author       : Deepanshu Thakur
+// Version      : 1.0
+// Copyright    : None
+// Description  : Wet Shark and 42, Ansi-style
+//============================================================================
+
 #include <stdio.h>
 #include <stdlib.h>
 
