@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+    int T=0;
+    scanf("%d",&T);
+    while(T--) {
+        unsigned long long int S=0,rem=0,twe=0,K=0;
+        scanf("%llu",&S);
+        K=S;
+        twe=S/20;
+        rem=K%20;
+        if(!rem)
+            K=(42*twe)-2;
+        else
+            K=(42*twe)+(2*rem);
+        K=K%(1000000007);
+        printf("%llu\n",K);
+    }
+    return 0;
+}
