@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main(void){
+	int t=0;
+	scanf("%d",&t);
+	while(t--){
+		int arr1[101],i=0;
+		static int j=0;
+		char p;
+		if(j==0){
+			p=getchar_unlocked();
+			j+=1;
+		}
+		p=getchar_unlocked();
+		while(p>32)
+		{
+			arr1[i]=p-48;
+			p=getchar_unlocked();
+			i+=1;
+		}
+		if(arr1[0]%2==0)
+			printf("EVEN\n");
+		else
+			printf("ODD\n");
+	}
+	return 0;
+}
