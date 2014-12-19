@@ -1,0 +1,25 @@
+//============================================================================
+// Name        : CodeCyphers-5.cpp
+// Author      : Deepanshu Thakur
+// Version     : 1.0
+// Copyright   : None
+// Description : Third question of CodeCyphers 5.0 in C++, Ansi-style
+//============================================================================
+
+
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main(void){
+
+	unsigned long long int T=0,N=0,res=0;
+	scanf("%llu",&T);
+	while(T--){
+
+		scanf("%llu",&N);
+		res=((N)*(N-1))/2;
+		printf("%llu\n",res);
+
+	}
+	return 0;
+}
