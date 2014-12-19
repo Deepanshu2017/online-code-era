@@ -1,0 +1,57 @@
+//============================================================================
+// Name        : CodeCyphers-5.cpp
+// Author      : Deepanshu Thakur
+// Version     : 1.0
+// Copyright   : None
+// Description : Fourth question of CodeCyphers 5.0 in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+using namespace std;
+#define  SIZE 5000005
+#define ASIZE 10000000
+unsigned long int arr[SIZE]={0};
+unsigned long int arrp[ASIZE]={0};
+int main(void) {
+	unsigned long int Q=0;
+	unsigned long int x=0,y=0,i=0,j=0;
+	long long int res=0;
+	scanf("%lu",&Q);
+	for(i=2;i<=SIZE;i++){
+		arr[i]=i;
+		arrp[i]=i;
+	}
+
+	for(i=2;i<=SIZE;i++)
+		if(arrp[i]!=0)
+			for(j=2;j<=SIZE;j++){
+				arrp[j*arrp[i]]=0;
+				if((j*arrp[i])>SIZE)
+					break;
+			}
+
+	while(Q--){
+		x=0;y=0;i=0;j=0;res=0;
+		scanf("%lu %lu",&x,&y);
+		if(x>y)
+			y=(x+y)-(x=y);
+		while(1){
+			if(arrp[y]!=0)
+				res=res-arrp[y];
+			else
+				res=res+y;
+			if(y==x)
+				break;
+			else if(x==y+1 || y==x+1)
+				y/=2;
+			else
+				y/=2;
+			if(x>y)
+				y=(x+y)-(x=y);
+		}
+		printf("%lld\n",res);
+	}
+	return 0;
+}
