@@ -1,0 +1,29 @@
+//============================================================================
+// Name        : CodeCyphers-5.cpp
+// Author      : Deepanshu Thakur
+// Version     : 1.0
+// Copyright   : None
+// Description : First question of CodeCyphers 5.0 in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <algorithm>
+#include <math.h>
+using namespace std;
+
+int main(void) {
+	unsigned long int T=0;
+	scanf("%lu",&T);
+	while(T--){
+		unsigned long long int a=0,b=0,res=0;
+		scanf("%llu %llu",&a,&b);
+		res=__gcd(a,b);
+		if(res==1)
+			printf("Is a Co-Prime\n");
+		else
+			printf("Not a Co-Prime\n");
+	}
+	return 0;
+}
