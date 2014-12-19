@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <math.h>
+int main(void){
+	int t=0;
+	scanf("%d",&t);
+	while(t--){
+		char S[100000],p;
+		unsigned int i=0,j=0,l=0,flag=0,flag2=0;
+		static int k=0;
+		if(k==0){
+			k+=1;
+			p=getchar_unlocked();
+		}
+		p=getchar_unlocked();
+		while(p>32){
+			S[i]=p;
+			i+=1;
+			p=getchar_unlocked();
+		}
+		for(j=0;j<i;j++){
+			flag2=0;
+			int t=S[j];
+			for(l=2;l<t;l++){
+				if(t%l==0){
+					flag+=1;
+					flag2+=1;
+					break;
+				}
+			}
+			if(flag2==0)
+				S[j]='0';
+		}
+		if(flag==i)
+			printf("NULL");
+		else
+			for(j=0;j<i;j++)
+				if(S[j]!='0')
+					printf("%c",S[j]);
+		printf("\n");
+	}
+	return 0;
+}
