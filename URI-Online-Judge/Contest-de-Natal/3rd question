@@ -1,0 +1,33 @@
+//============================================================================
+// Name        : URI.cpp
+// Author      : Deepanshu Thakur
+// Version     : 1.0
+// Copyright   : None
+// Description : Third question in C++, Ansi-style
+//============================================================================
+
+#include <stdio.h>
+#include <math.h>
+#include <iostream>
+#include <fstream>
+#define pi 3.141592654
+using namespace std;
+int main(void){
+    double a=0,b=0,c=0,res=0;
+    while(cin>>a>>b>>c){
+        //cin>>a;
+        //cin>>b;
+        //cin>>c;
+        a=a*(pi/180);
+        res=tan(a);
+        res=res*b;
+        res=(res+c);
+        res=res*5;
+        cout.setf(ios_base::fixed, ios_base::floatfield);
+        cout.precision(2);
+        cout<<res<<endl;
+        cout.unsetf(ios_base::fixed);
+        cout.unsetf(ios_base::floatfield);
+    }
+}
+
