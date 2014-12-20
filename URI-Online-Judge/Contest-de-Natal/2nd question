@@ -1,0 +1,26 @@
+//============================================================================
+// Name        : URI.cpp
+// Author      : Deepanshu Thakur
+// Version     : 1.0
+// Copyright   : None
+// Description : First question in C++, Ansi-style
+//============================================================================
+
+#include <stdio.h>
+#include <math.h>
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main(void){
+	double a=0,res=0;
+	while(cin>>a){
+		//cin>>a;
+		res=(a*a);
+		res=res*(2*sqrt(3)/5);
+		cout.setf(ios_base::fixed, ios_base::floatfield);
+		cout.precision(2);
+		cout<<res<<endl;
+		cout.unsetf(ios_base::fixed);
+		cout.unsetf(ios_base::floatfield);
+	}
+}
