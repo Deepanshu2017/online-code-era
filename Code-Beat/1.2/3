@@ -4,7 +4,7 @@
  Author      : Deepanshu Thakur
  Version     : 1.0
  Copyright   : None
- Description : Code beat
+ Description : code beta
  ============================================================================
  */
 
@@ -21,6 +21,8 @@ int main(void) {
 			max1=arr[i];
 		i+=1;
 		p=getchar_unlocked();
+		if(p==32)
+			p=getchar_unlocked();
 	}
 	k=i;
 	for(i=0;i<k-1;i++)
@@ -37,7 +39,7 @@ int main(void) {
 		i+=1;
 	}
 	i+=1;
-	max3=arr[i];
+	max3=max2;
 	while(max3==max2 && i<k){
 		max3=arr[i];
 		i+=1;
