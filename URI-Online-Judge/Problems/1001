@@ -1,0 +1,19 @@
+//============================================================================
+// Name        : URI.cpp
+// Author      : Deepanshu Thakur
+// Version     : 1.0
+// Copyright   : None
+// Description : Question Number 1001 C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+int main(void){
+
+    long long int A=0,B=0,SUM=0;
+    cin>>A;
+    cin>>B;
+    SUM=A+B;
+    cout<<"X = "<<SUM<<endl;
+    return 0;
+}
