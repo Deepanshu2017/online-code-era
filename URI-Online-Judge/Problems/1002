@@ -1,0 +1,26 @@
+
+//============================================================================
+// Name        : URI.cpp
+// Author      : Deepanshu Thakur
+// Version     : 1.0
+// Copyright   : None
+// Description : 1002 in C++, Ansi-style
+//============================================================================
+
+#include <stdio.h>
+#include <math.h>
+#include <iostream>
+#define pi 3.14159
+using namespace std;
+int main(void){
+	double a=0,res=0;
+	cin>>a;
+	res=(a*a);
+	res=res*pi;
+	cout.setf(ios_base::fixed, ios_base::floatfield);
+	cout.precision(4);
+	cout<<"A="<<res<<endl;
+	cout.unsetf(ios_base::fixed);
+	cout.unsetf(ios_base::floatfield);
+	return 0;
+}
