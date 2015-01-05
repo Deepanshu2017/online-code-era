@@ -1,0 +1,33 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 10000
+using namespace std;
+int main(void) {
+    unsigned long int T=0,N=0,i=0,j=0;
+    unsigned long int arr[2*SIZE]={0},prime[SIZE]={0};
+    for(i=0;i<SIZE;i++)
+        arr[i]=i;
+    for(i=2;i<SIZE;i++)
+        if(arr[i]!=0)
+            for(j=2;j<SIZE;j++) {
+                arr[j*arr[i]]=0;
+                if(j*arr[i]>SIZE)
+                    break;
+            }
+    j=0;
+    for(i=0;i<SIZE;i++)
+        if(arr[i]!=0 && arr[i]!=1)
+            prime[j++]=arr[i];
+    scanf("%lu",&T);
+    while(T--) {
+        scanf("%lu",&N);
+        for(i=0;i<SIZE;i++)
+            if(prime[i]>N)
+                break;
+        printf("%lu\n",prime[i]);
+    }
+    return 0;
+}
