@@ -1,0 +1,75 @@
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <vector>
+#include <algorithm>
+#include <math.h>
+using namespace std;
+static unsigned long int zero=0;
+static unsigned long int one = 0;
+inline int fibonacci(int N) {
+        if(N==0) {
+                zero+=1;
+                return 0;
+        }
+        else if(N==1) {
+                one+=1;
+                return 1;
+        }
+        else
+                return (fibonacci(N-1)+fibonacci(N-2));
+}
+int main(void) {
+        unsigned long int T=0,N=0,i=0;
+        scanf("%lu",&T);
+        vector<unsigned long int> v0,v1,v2;
+        for(N=0;N<=3;N++) {
+                zero=0;
+                one=0;
+                fibonacci(N);
+                v2.push_back(N);
+                v1.push_back(one);
+                v0.push_back(zero);
+        }
+        for(;N<=40;N++){
+                zero=0;
+                one=0;
+                zero = v0[N-1] + v0[N-2];
+                one = v1[N-1] + v1[N-2];
+                v2.push_back(N);
+                v1.push_back(one);
+                v0.push_back(zero);
+        }
+        while(T--) {
+                scanf("%lu",&N);
+                zero = 0;
+                one = 0;
+                //fibonacci(N);
+                zero = v0[N-1] + v0[N-2];
+                one = v1[N-1] + v1[N-2];
+                switch(N) {
+                        case 0:
+                                zero = 1;
+                                one = 0;
+                                break;
+                        case 1:
+                                zero = 0;
+                                one = 1;
+                                break;
+                        case 2:
+                                zero = 1;
+                                one = 1;
+                                break;
+                        case 3:
+                                zero = 1;
+                                one = 2;
+                                break;
+                        default:
+                                zero = zero + 0;
+                                one = one + 0;
+                                break;
+                }
+                printf("%lu %lu\n",zero,one);
+        }
+        return 0;
+}
