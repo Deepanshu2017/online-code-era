@@ -1,0 +1,54 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <string>
+#include <stdio.h>
+#include <stdlib.h>
+using namespace std;
+
+
+int main(void) {
+    int T=0;
+    scanf("%d",&T);
+    while(T--) {
+        unsigned long long int i=0,j=0,res=0,k=0,l=0;
+        string str;
+        cin>>str;
+        vector<string> v1;
+        i = str.length() - 1;
+        for(k=1;k<=i;k++) {
+        	for(j=0;j<=i;j++) {
+        		if(j+k>i+1)
+        			break;
+        		v1.push_back(str.substr(j,k));
+        		++l;
+        		sort(v1[l-1].begin(),v1[l-1].end());
+        	}
+        }
+        unsigned long long int dis=0,count=0;
+        vector<string> ::iterator it;
+        for(i=0;i<l;i++) {
+        	if(v1[i]!="0") {
+        		it = find(v1.begin()+i+1,v1.end(),v1[i]);
+        		dis = distance(v1.begin(),it);
+        		count = 0;
+        		if(it!=v1.end()) {
+        			v1[dis] = "0";
+        			count+=1;
+        			it = find(v1.begin()+i+1,v1.end(),v1[i]);
+        			while(it!=v1.end()) {
+        				dis = distance(v1.begin(),it);
+        				v1[dis] = "0";
+        				count+=1;;
+        				it = find(v1.begin()+i+1,v1.end(),v1[i]);
+        			}
+        		}
+        		res = res + ((count * (count + 1)) / 2);
+        	}
+        }
+        printf("%llu\n",res);
+    }
+    return 0;
+}
