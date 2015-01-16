@@ -16,3 +16,25 @@ int main(void){
   }
   return 0;
 } 
+
+
+//Better Approach
+
+/*
+
+#include<stdio.h>
+
+int main(void){
+  
+  unsigned int a=0,i=0;
+  while(i<100) {
+  	scanf("%d",&a);
+  	if(a == 42)
+  		return 0;
+  	else
+  		printf("%u\n",a);
+  }
+  return 0;
+} 
+
+*/
