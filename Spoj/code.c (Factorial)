@@ -19,3 +19,27 @@ int main(void){
 	
 	return 0;
 }
+
+
+
+//Another approach
+/*
+
+#include <stdio.h>
+
+int main(void) {
+	unsigned long int a=0,c=0,d=0,b=0;
+	scanf("%lu",&a);
+	while(a--) {
+		scanf("%lu",&c);
+		d=0;b=1;
+		while(b <= c) {
+		  d += (c / (b * 5));
+		  b *= 5;
+		}
+		printf("%lu\n",d);
+	}
+	return 0;
+}
+
+*/
