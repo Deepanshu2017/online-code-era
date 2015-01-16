@@ -1,0 +1,70 @@
+//Finally solved this problem 
+//I have used segmented sieve
+
+#include <iostream>
+#include <cstring>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <vector>
+using namespace std;
+#define SIZE 100005
+
+int main(void) {
+
+	unsigned long long int prime[SIZE],i=0,j=0,k=0,T=0,N=0,M=0;
+	vector<int> v1;
+	j = sqrt(1000000000) + 1;
+
+	for(i=0;i<=j;i++)
+		prime[i] = i;
+
+	prime[0]=prime[1]=0;
+
+	for(i = 2;i<=j;i++)
+		if(prime[i])
+			for(k=2;k<=j;k++) {
+				if(k * prime[i] > j)
+					break;
+				prime[k * prime[i]] = 0;
+			}
+
+	for(i=0;i<=j;++i)
+		if(prime[i])
+			v1.push_back(prime[i]);
+
+	scanf("%llu",&T);
+
+	while(T--) {
+		scanf("%llu %llu",&M,&N);
+		int myprime[SIZE]={1};
+		fill(myprime,myprime+SIZE,1);
+		i = 0,j = 0;
+		unsigned long long int p = 0,s = 0;
+		j = sqrt(N) + 1;
+		for(i=0;j>=v1[i] && v1[i]!=0;++i) {
+			p = v1[i];
+			s = M / p;
+			s *= p;
+			for(k = s; k<=N;k+=p) {
+				if(k<M)
+					continue;
+				myprime[k - M] = 0;
+			}
+		}
+
+		for(i=0;j>=v1[i];++i) {
+			if(v1[i]>=M && v1[i]<=N)
+				cout<<v1[i]<<endl;
+		}
+
+		for(i=0;i<N-M+1;++i) {
+			if(myprime[i] == 1 && (i+M!=1))
+				cout<<i+M<<endl;
+		}
+		cout<<endl;
+	}
+
+	return 0;
+}
+
