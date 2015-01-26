@@ -1,0 +1,62 @@
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <vector>
+#include <algorithm>
+#define SIZE 10005
+using namespace std;
+
+int main(void) {
+
+    unsigned int T = 0;
+    scanf("%u",&T);
+    while(T--) {
+
+    	long long int X = 0, Y = 0, N = 0, i = 0, temp = 0, countX = 0, countY = 0;
+    	//vector<long long int> v1(N);
+    	long long int v1[SIZE] = {0};
+
+    	scanf("%lld %lld %lld",&X,&Y,&N);
+    	for(i = 0; i < N; ++i) {
+    		scanf("%lld",&v1[i]);
+    		//scanf("%lld",&temp);
+    		//v1.push_back(temp);
+    	}
+
+    	sort(v1,v1+i);
+    	//vector<long long int> ::iterator it = v1.begin();
+    	temp = 0;
+    	i = 0;
+    	while(temp < X && i < N) {
+    		//temp += *it;
+    		//++it;
+    		temp += v1[i++];
+    		countX += 1 ;
+    	}
+    	if(temp > X)
+    		countX -= 1;
+
+    	temp = 0;
+    	//it = v1.begin();
+    	i = 0;
+
+    	while(temp < Y && i < N) {
+    		//temp += *it;
+    		//++it;
+    		temp += v1[i++];
+    		countY += 1;
+    	}
+
+    	if(temp > Y)
+    		countY -= 1;
+
+    	if(countX > countY)
+    		printf("Chef Won\n");
+    	else if(countX < countY)
+    		printf("Jhool Won\n");
+    	else
+    		printf("Tie\n");
+    }
+
+    return 0;
+}
