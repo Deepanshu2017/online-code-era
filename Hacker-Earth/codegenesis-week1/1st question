@@ -1,0 +1,24 @@
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <vector>
+using namespace std;
+
+int main(void) {
+    long long int T = 0, temp = 0, num = 0;
+    scanf("%lld",&T);
+    while(T--) {
+    	scanf("%lld",&num);
+    	vector<long long int> v1;
+    	while(num--) {
+    		
+    		scanf("%lld",&temp);
+    		if(temp % 2 == 0)
+    			v1.push_back(temp);
+    		
+    	}
+    	
+    	cout<<v1.size()<<endl;
+	}
+    return 0;
+}
