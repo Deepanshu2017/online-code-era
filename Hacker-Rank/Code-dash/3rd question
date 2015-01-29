@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define UP 1
+#define DOWN 2
+#define LEFT 3
+#define RIGHT 4
+#define SIZE 105
+int main(void) {
+	int count=0;
+	scanf("%d",&count);
+	while(count--) {
+		int MAX=0;
+		scanf("%d",&MAX);
+		int r=0,c=0,mat[SIZE][SIZE]={0},p=1;
+		int row_right=0,colom_down=MAX-1,row_left=MAX-1,colom_up=0;
+		int n=MAX,initial=UP;
+		while(p!=n*n+1) {
+			if(initial==UP) {
+				c=colom_up++;
+				for(r=0;r<n;r++)
+					if(mat[r][c]==0)
+						mat[r][c]=p++;
+				initial=DOWN;
+			}
+			else if(initial == DOWN) {
+				r=row_left--;
+				for(c=0;c<n;c++)
+					if(mat[r][c]==0)
+						mat[r][c]=p++;
+				initial = LEFT;
+			}
+			else if(initial == LEFT) {
+				c=colom_down--;
+				for(r=n-1;r>=0;r--)
+					if(mat[r][c]==0)
+						mat[r][c]=p++;
+				initial=RIGHT;
+			}
+			else if(initial == RIGHT) {
+				r=row_right++;
+				for(c=n-1;c>=0;c--)
+					if(mat[r][c]==0)
+						mat[r][c]=p++;
+				initial=UP;
+			}
+		}
+		for(r=0;r<n;r++) {
+			for(c=0;c<n;c++) {
+				printf("%d ",mat[r][c]);
+			}
+			printf("\n\n");
+		}
+	}
+	return 0;
+}
