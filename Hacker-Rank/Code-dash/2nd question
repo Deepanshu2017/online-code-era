@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <iostream>
+#define SIZE 10005
+using namespace std;
+int main(void) {
+
+	char ch='\0';
+	int t=0;
+	scanf("%d",&t);
+	while(t--) {
+		int i=0,change=0,j=0,half=0;
+		vector<char> v1,v2,v3;
+		ch=getchar_unlocked();
+		if(ch=='\n')
+			ch=getchar_unlocked();
+		while(ch>32) {
+			v1.push_back(ch);
+			i+=1;
+			ch=getchar_unlocked();
+		}
+		j=i;
+		if(i%2!=0)
+			printf("-1\n");
+		else {
+			half=i/2;
+			for(i=0;i<half;i++)
+				v2.push_back(v1[i]);
+			for(;i<j;i++)
+				v3.push_back(v1[i]);
+			for(i=0;i<half;i++) {
+				ch = v2[i];
+				int pos=find(v3.begin(),v3.end(),ch)-v3.begin();
+				if(pos>=v3.size()){
+					change+=1;
+				}
+				else
+					v3[pos]='Z';
+			}
+			printf("%d\n",change);
+		}
+        v1.clear();
+        v2.clear();
+        v3.clear();
+	}
+
+	return 0;
+}
