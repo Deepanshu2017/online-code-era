@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#define SIZE 10005
+using namespace std;
+int main(void) {
+
+	int n=0;
+	scanf("%d",&n);
+	int p=0,i=0;
+	vector<int> v1,v2;
+	int arr[SIZE]={0};
+	for	(i=0;i<n;i++)
+		scanf("%d",&arr[i]);
+
+	p=arr[0];
+	for(i=0;i<n;i++)
+		if(arr[i]<p)
+			v1.push_back(arr[i]);
+
+	v1.push_back(p);
+	for(i=0;i<n;i++)
+		if(arr[i]>p)
+			v1.push_back(arr[i]);
+
+	vector<int>::iterator it;
+	for(it=v1.begin();it!=v1.end();it++)
+		cout<<*it<<" ";
+
+	return 0;
+}
