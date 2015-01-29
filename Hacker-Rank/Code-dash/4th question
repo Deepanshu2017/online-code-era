@@ -1,0 +1,35 @@
+//============================================================================
+// Name        : code_dash.cpp
+// Author      : Deepanshu Thakur
+// Version     : 1.0
+// Copyright   : None
+// Description : Questions of code dash in C++, Ansi-style
+//============================================================================
+
+
+#include <vector>
+#include <map>
+#include <iostream>
+
+using namespace std;
+int main(void){
+	map<char , char> m;
+	map<char , char>::iterator i;
+	vector<char> v1;
+	vector<char>::iterator p;
+	long long int N=0;
+	char ch='\0';
+	cin>>N;
+
+	while(N--){
+		cin>>ch;
+		if(m.find(ch) == m.end()){
+			v1.push_back(ch);
+			m.insert(pair<char , char>(ch,ch));
+		}
+	}
+
+	for(p=v1.begin() ; p<v1.end() ; p++)
+		cout<<*p;
+	return 0;
+}
