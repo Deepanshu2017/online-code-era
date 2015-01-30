@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+#include <vector>
+using namespace std;
+#define SIZE 1000000
+int main(void) {
+
+    unsigned int T=0,i=0,j=0,l=0,n=0,a=0,b=0,sum=0;
+    //vector<unsigned int> res;
+    scanf("%u",&T);
+    while(T--){
+        unsigned int res[SIZE]={0};
+        scanf("%u",&n);
+        scanf("%u",&a);
+        scanf("%u",&b);
+        for(i=0;i<n;i++){
+            sum=0;
+            for(l=n-i;l<n;l++)
+                sum+=b;
+            for(j=i;j<n-1;j++)
+                sum+=a;
+            res[i]=sum;
+        }
+        i=0;
+        for(i=0;i<n-1;i++)
+        	for(j=i+1;j<n;j++)
+        		if(res[i]==res[j])
+        			res[j]=0;
+        		else if(res[i]>res[j] && res[i]!=0 && res[j]!=0)
+        			res[j]=(res[i]+res[j])-(res[i]=res[j]);
+        for(i=0;i<n;i++)
+            if(i==0)
+                printf("%d",res[i]);
+            else if(res[i]!=0)
+            	printf(" %d",res[i]);
+        if(T)
+            printf("\n");
+        //res.clear();
+    }
+
+    return 0;
+}
