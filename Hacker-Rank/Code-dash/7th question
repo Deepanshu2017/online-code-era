@@ -1,0 +1,37 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <stdio.h>
+#include <stdlib.h>
+using namespace std;
+
+
+int main(void) {
+    
+    unsigned long long int i=0,j=0,l=0,b=0,max=0,temp=0,T=0,temp2=0;
+    //vector<unsigned long long int> v1;
+    scanf("%llu",&T);
+    while(T--) {
+        max = 0;
+        scanf("%llu %llu",&l,&b);
+        if(l == b) {
+            max = 1;
+        }
+        else {
+            j = l * b;
+            temp = l > b ? b : l;
+            for(i=1;i<=temp;i++) {
+                temp2 = i * i;
+                if((l-i)%i==0 && (b-i)%i==0)
+                    if(j % temp2 == 0)
+                        max = j / temp2;
+            }
+        }
+        printf("%llu\n",max);
+    }
+    
+    
+    return 0;
+}
