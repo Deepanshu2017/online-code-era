@@ -1,0 +1,25 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <stdio.h>
+#include <stdlib.h>
+using namespace std;
+
+
+int main(void) {
+    
+    unsigned long long int i=0,temp=0,T=0,N=0;
+    scanf("%llu",&T);
+    while(T--) {
+        scanf("%llu",&N);
+        temp = 1;
+        for(i=0;i<N-1;i++) {
+            temp = ((temp * 2) + 1)%100000;
+        }
+        printf("%llu\n",temp);
+    }
+    
+    return 0;
+}
