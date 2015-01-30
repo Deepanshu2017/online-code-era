@@ -1,0 +1,37 @@
+//============================================================================
+// Name        : code_dash.cpp
+// Author      : Deepanshu Thakur
+// Version     : 1.0
+// Copyright   : None
+// Description : Code Dash questions in C, Ansi-style
+//============================================================================
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+#define SIZE  32000
+#define LIMIT 1000000500
+int main(void) {
+
+    unsigned long int arr[SIZE]={0};
+    unsigned long int a=0,b=0,i=0,T=0,count=0;
+    for(i=1;i<=LIMIT;i++){
+        b=pow(i,2);
+        if(b>LIMIT)
+            break;
+        arr[i]=b;
+    }
+    scanf("%lu",&T);
+    while(T--){
+        count=0;
+        scanf("%lu %lu",&a,&b);
+        i=0;
+        while(arr[i]<a)
+            i+=1;
+        for(;arr[i]<=b && arr[i]!=0;i++)
+            count+=1;
+        printf("%lu\n",count);
+    }
+    return 0;
+}
