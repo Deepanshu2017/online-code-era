@@ -1,0 +1,41 @@
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+inline int roundNo(float num) {
+    return num < 0 ? num - 0.5 : num + 0.5;
+}
+
+int main(void) {
+    
+    int T = 0;
+    scanf("%d",&T);
+    string t;
+    getline(cin,t);
+    while(T--) {
+    	int i = 0, temp = 0, flag = 0;
+    	float sum = 0;
+    	string s1;
+    	getline(cin,s1);
+    	
+    	for(i = 0; i < s1[i]!= '\0' && !flag; ++i ) {
+    		sum += s1[i];
+    		if(s1[i] == ' ')
+    			flag = 1;
+    	}
+    	
+    	if(flag)
+    		printf("%d\n",0);
+    	else {
+    		sum = sum / s1.length();
+    		temp = roundNo(sum);
+    		printf("%d\n",temp);
+    	}
+    }
+    
+    
+    return 0;
+}
