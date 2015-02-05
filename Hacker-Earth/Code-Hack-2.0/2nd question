@@ -1,0 +1,46 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <stdio.h>
+#include <stdlib.h>
+#include <algorithm>
+using namespace std;
+     
+int main(void) {
+     
+    int T = 0;
+    scanf("%d",&T);
+    while(T--) {
+    	unsigned long long int A = 0, B = 0, temp = 0;
+    	scanf("%llu %llu",&A,&B);
+    	int digit = 0;
+    	temp = B;
+    	while(temp) {
+    		++digit;
+    		temp /= 10;
+    	}
+    	vector<int> v1;
+   		temp = A;
+    	while(temp) {
+    		v1.push_back(temp % 10);
+    		temp /= 10;
+    	}
+    	reverse(v1.begin(), v1.end());
+    	temp = 0;
+    	int i = 0, j = 0;
+    	for(i = 0; i <= v1.size() - digit; ++i) {
+    		j = i;
+    		while ( j < digit + i) {
+    			temp = temp * 10 + v1[j];
+    			++j;
+    		}
+    		printf("%llu\n",temp * B);
+    		j = 0;
+    		temp = 0;
+    	}
+    }
+     
+     
+     
+    return 0;
+}
