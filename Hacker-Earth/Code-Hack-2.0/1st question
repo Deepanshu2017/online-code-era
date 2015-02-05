@@ -1,0 +1,39 @@
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <algorithm>
+#include <vector>
+#define SIZE 1005
+using namespace std;
+
+int main(void)	{
+
+    int T = 0;
+    scanf("%d",&T);
+    while(T--) {
+    	int hasht[SIZE] = {0};
+    	unsigned int N = 0, i = 0, max = 0;
+    	unsigned long long int sum = 0;
+    	scanf("%u",&N);
+    	vector<unsigned int> v1(N);
+    	for(i = 0; i < N; ++i) {
+    		scanf("%u",&v1[i]);
+    		hasht[ v1[i] ] += 1;
+    	}
+
+    	
+    	for(i = 0; i < SIZE; ++i) {
+    		sum += hasht[i];
+    		if(max < hasht[i])
+    			max = hasht[i];
+    	}
+    	
+    	if(sum >= 2 * max - 1)
+    		printf("can do\n");
+    	else
+    		printf("bad luck\n");
+    }
+
+
+    return 0;
+}
