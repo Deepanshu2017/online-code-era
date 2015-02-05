@@ -1,0 +1,46 @@
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <vector>
+using namespace std;
+     
+     
+int main(void) {
+    int T = 0;
+    scanf("%d",&T);
+    while(T--) {
+	    int i = 0,M = 0, N = 0,max = 0, res = 0, index = 0, j = 0, temp = 0;
+    	vector<int> v1;
+    	scanf("%d",&M);
+   		scanf("%d",&N);
+    	for(i = 0; i < N ;++i) {
+    		scanf("%d",&temp);
+    		if(temp <= M)
+    			v1.push_back(temp);
+    	}
+    	
+    	for(i = 0; i < v1.size() ; ++i) {
+    		max = 0;
+    		index = 0;
+    		if(v1[i] != -1) {
+    			for(j = i + 1; j < v1.size(); ++j) {
+    				if(v1[j] != -1) {
+    					temp = v1[i] + v1[j];
+    					if(temp > max && temp <= M) {
+    						max = temp;
+    						index = j;
+    					}
+    				}
+    			}
+    			++res;
+    			v1[i] = -1;
+    			v1[index] = -1;
+    		}
+    	}
+    	
+    	printf("%d\n",res);
+    }
+    
+    return 0;
+     
+}
