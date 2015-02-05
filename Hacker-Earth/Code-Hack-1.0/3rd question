@@ -1,0 +1,32 @@
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <algorithm>
+
+using namespace std;
+
+int main(void) {
+    
+    unsigned long int T = 0, N = 0;
+    scanf("%lu",&T);
+    while(T--) {
+    	scanf("%lu",&N);
+    	long int a = 0, b = 0, c = 0,flag = 0;
+    	for(a = 0; a < N / 6 && !flag; ++a) {
+    		for(b = 0; b < N / 9 && !flag; ++b) {
+    			for(c = 0; c < N / 20 && !flag; ++c) {
+    				if(6 * a + 9 * b + 20 * c == N) {
+    					flag = 1;
+    					break;
+    				}
+    			}
+    		}
+    	}
+    	if(flag)
+    		printf("True\n");
+    	else
+    		printf("False\n");
+    }
+    
+    return 0;
+}
